@@ -1,0 +1,342 @@
+{
+  "$schema": "./application-structure.schema.json",
+  "projectId": "my-rust-app",
+  "updatedAt": "2026-08-22T15:00:00Z",
+  "language": {
+    "name": "Rust",
+    "edition": "2024",
+    "minimumRustVersion": "1.85.0",
+    "toolchainFile": "rust-toolchain.toml"
+  },
+  "workspace": {
+    "root": ".",
+    "members": [
+      {
+        "crate": "app",
+        "path": "crates/app",
+        "kind": "binary",
+        "purpose": "Application entry point and orchestration.",
+        "dependsOn": [
+          "core",
+          "infrastructure"
+        ]
+      },
+      {
+        "crate": "core",
+        "path": "crates/core",
+        "kind": "library",
+        "purpose": "Domain types and business rules.",
+        "dependsOn": []
+      },
+      {
+        "crate": "infrastructure",
+        "path": "crates/infrastructure",
+        "kind": "library",
+        "purpose": "External systems and persistence.",
+        "dependsOn": []
+      }
+    ]
+  },
+  "naming": {
+    "rules": [
+      {
+        "element": "module",
+        "style": "snake_case",
+        "description": "Module names describe a responsibility and use singular or domain-specific nouns.",
+        "examples": [
+          "project",
+          "validation",
+          "persistence"
+        ]
+      },
+      {
+        "element": "struct",
+        "style": "PascalCase",
+        "description": "Struct names are nouns representing domain concepts.",
+        "examples": [
+          "Project",
+          "ProjectId"
+        ]
+      },
+      {
+        "element": "function",
+        "style": "snake_case",
+        "description": "Functions use verbs when they perform an action.",
+        "examples": [
+          "create_project",
+          "load_project"
+        ]
+      },
+      {
+        "element": "method",
+        "style": "snake_case",
+        "description": "Methods use conventional Rust names such as new, from_value, validate, and save.",
+        "examples": [
+          "new",
+          "validate",
+          "save"
+        ]
+      },
+      {
+        "element": "field",
+        "style": "snake_case",
+        "description": "Fields use clear nouns and should not repeat the enclosing type unnecessarily.",
+        "examples": [
+          "id",
+          "name",
+          "created_at"
+        ]
+      },
+      {
+        "element": "constant",
+        "style": "SCREAMING_SNAKE_CASE",
+        "description": "Constants use uppercase names.",
+        "examples": [
+          "MAX_NAME_LENGTH"
+        ]
+      }
+    ],
+    "identifierPatterns": {
+      "module": "snake_case",
+      "struct": "PascalCase",
+      "enum": "PascalCase",
+      "trait": "PascalCase",
+      "function": "snake_case",
+      "method": "snake_case",
+      "field": "snake_case",
+      "constant": "SCREAMING_SNAKE_CASE",
+      "static": "SCREAMING_SNAKE_CASE",
+      "typeAlias": "PascalCase",
+      "enumVariant": "PascalCase",
+      "genericParameter": "PascalCase"
+    }
+  },
+  "modules": [
+    {
+      "id": "module-core",
+      "name": "core",
+      "qualifiedPath": "core",
+      "crate": "core",
+      "path": "crates/core/src/lib.rs",
+      "visibility": "pub",
+      "summary": "Contains the application's domain model and business rules.",
+      "responsibilities": [
+        "Define domain entities.",
+        "Validate domain state.",
+        "Expose domain errors.",
+        "Remain independent from infrastructure."
+      ],
+      "imports": [
+        "serde",
+        "thiserror"
+      ],
+      "invariants": [
+        "Domain types must not depend on database or filesystem types.",
+        "Invalid project names must be rejected before construction."
+      ],
+      "symbols": [
+        {
+          "id": "struct-project-id",
+          "name": "ProjectId",
+          "qualifiedPath": "core::ProjectId",
+          "kind": "struct",
+          "visibility": "pub",
+          "summary": "Strongly typed identifier for a project.",
+          "description": "Prevents accidental use of arbitrary strings where a project identifier is required.",
+          "source": {
+            "file": "crates/core/src/lib.rs",
+            "lineStart": 8,
+            "lineEnd": 20
+          },
+          "members": [
+            {
+              "id": "field-project-id-value",
+              "name": "value",
+              "kind": "field",
+              "visibility": "private",
+              "summary": "The underlying identifier value.",
+              "type": "String",
+              "required": true,
+              "mutable": false,
+              "source": {
+                "file": "crates/core/src/lib.rs",
+                "lineStart": 10,
+                "lineEnd": 10
+              },
+              "namingNotes": "Use value because the field represents the validated wrapped value."
+            },
+            {
+              "id": "method-project-id-new",
+              "name": "new",
+              "kind": "method",
+              "visibility": "pub",
+              "summary": "Creates a ProjectId from a non-empty identifier string.",
+              "signature": "pub fn new(value: impl Into<String>) -> Result<Self, DomainError>",
+              "receiver": "none",
+              "returnType": "Result<Self, DomainError>",
+              "errorType": "DomainError",
+              "async": false,
+              "unsafe": false,
+              "parameters": [
+                {
+                  "name": "value",
+                  "type": "impl Into<String>",
+                  "summary": "Candidate identifier value.",
+                  "required": true
+                }
+              ],
+              "source": {
+                "file": "crates/core/src/lib.rs",
+                "lineStart": 23,
+                "lineEnd": 32
+              },
+              "invariants": [
+                "The resulting identifier must not be empty."
+              ],
+              "sideEffects": []
+            }
+          ],
+          "derives": [
+            "Debug",
+            "Clone",
+            "PartialEq",
+            "Eq"
+          ],
+          "invariants": [
+            "A ProjectId always contains a non-empty value."
+          ],
+          "stability": "stable"
+        },
+        {
+          "id": "struct-project",
+          "name": "Project",
+          "qualifiedPath": "core::Project",
+          "kind": "struct",
+          "visibility": "pub",
+          "summary": "Represents a project managed by the application.",
+          "source": {
+            "file": "crates/core/src/lib.rs",
+            "lineStart": 40,
+            "lineEnd": 58
+          },
+          "members": [
+            {
+              "id": "field-project-id",
+              "name": "id",
+              "kind": "field",
+              "visibility": "pub",
+              "summary": "Unique identifier of the project.",
+              "type": "ProjectId",
+              "required": true,
+              "mutable": false,
+              "source": {
+                "file": "crates/core/src/lib.rs",
+                "lineStart": 43,
+                "lineEnd": 43
+              }
+            },
+            {
+              "id": "field-project-name",
+              "name": "name",
+              "kind": "field",
+              "visibility": "pub",
+              "summary": "Human-readable project name.",
+              "type": "String",
+              "required": true,
+              "mutable": false,
+              "source": {
+                "file": "crates/core/src/lib.rs",
+                "lineStart": 44,
+                "lineEnd": 44
+              }
+            },
+            {
+              "id": "method-project-validate",
+              "name": "validate",
+              "kind": "method",
+              "visibility": "pub",
+              "summary": "Checks whether the project satisfies domain validation rules.",
+              "signature": "pub fn validate(&self) -> Result<(), DomainError>",
+              "receiver": "&self",
+              "returnType": "Result<(), DomainError>",
+              "errorType": "DomainError",
+              "async": false,
+              "unsafe": false,
+              "parameters": [],
+              "source": {
+                "file": "crates/core/src/lib.rs",
+                "lineStart": 61,
+                "lineEnd": 67
+              },
+              "invariants": [
+                "The project name must contain at least one non-whitespace character."
+              ]
+            }
+          ],
+          "derives": [
+            "Debug",
+            "Clone",
+            "PartialEq",
+            "Eq"
+          ],
+          "invariants": [
+            "The id is valid.",
+            "The name is not blank."
+          ],
+          "stability": "stable"
+        },
+        {
+          "id": "enum-domain-error",
+          "name": "DomainError",
+          "qualifiedPath": "core::DomainError",
+          "kind": "error_type",
+          "visibility": "pub",
+          "summary": "Errors produced when domain rules are violated.",
+          "source": {
+            "file": "crates/core/src/lib.rs",
+            "lineStart": 70,
+            "lineEnd": 80
+          },
+          "members": [
+            {
+              "id": "variant-empty-project-name",
+              "name": "EmptyProjectName",
+              "kind": "variant",
+              "visibility": "pub",
+              "summary": "The project name is empty or contains only whitespace.",
+              "type": "unit",
+              "source": {
+                "file": "crates/core/src/lib.rs",
+                "lineStart": 73,
+                "lineEnd": 73
+              }
+            }
+          ],
+          "derives": [
+            "Debug",
+            "Display",
+            "Error"
+          ],
+          "stability": "stable"
+        }
+      ],
+      "childModules": []
+    }
+  ],
+  "relationships": [
+    {
+      "from": "struct-project",
+      "type": "accepts",
+      "to": "struct-project-id",
+      "description": "Project contains a strongly typed ProjectId.",
+      "direction": "one_way"
+    },
+    {
+      "from": "method-project-validate",
+      "type": "returns",
+      "to": "enum-domain-error",
+      "description": "Validation returns DomainError when domain rules are violated.",
+      "direction": "one_way"
+    }
+  ]
+}
