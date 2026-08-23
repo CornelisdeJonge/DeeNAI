@@ -1,0 +1,123 @@
+{
+  "$schema": "./project-plan.schema.json",
+  "project": {
+    "id": "my-rust-app",
+    "name": "My Rust Application",
+    "description": "A Rust application for managing local project data.",
+    "status": "active",
+    "createdAt": "2026-08-22",
+    "lastReviewedAt": "2026-08-22"
+  },
+  "vision": "Provide a reliable, testable, and maintainable application for managing local project data.",
+  "principles": [
+    "Prefer simple designs over speculative abstractions.",
+    "Keep domain logic independent from infrastructure.",
+    "Make behavior observable through tests and diagnostics.",
+    "Deliver small, working increments."
+  ],
+  "successCriteria": [
+    "The application can create, read, update, and delete project records.",
+    "Invalid input produces useful errors.",
+    "Core domain behavior is covered by automated tests.",
+    "The workspace passes formatting, checks, tests, and clippy."
+  ],
+  "constraints": [
+    "The application must run on the supported target platforms.",
+    "External services must be accessed through replaceable interfaces.",
+    "No feature is considered complete without acceptance tests or an explicit justification."
+  ],
+  "architecture": {
+    "workspaceMembers": [
+      "crates/app",
+      "crates/core",
+      "crates/infrastructure"
+    ],
+    "dependencyRules": [
+      "core must not depend on infrastructure",
+      "app may orchestrate core and infrastructure",
+      "infrastructure must expose interfaces suitable for testing"
+    ]
+  },
+  "milestones": [
+    {
+      "id": "mvp",
+      "title": "Minimum viable application",
+      "description": "Deliver the smallest usable version of the application.",
+      "status": "in_progress",
+      "priority": 1,
+      "goalIds": [
+        "goal-domain-model",
+        "goal-persistence",
+        "goal-cli"
+      ],
+      "exitCriteria": [
+        "All MVP goals are complete.",
+        "End-to-end happy path works.",
+        "Error paths have tests.",
+        "CI verification passes."
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-domain-model",
+      "milestoneId": "mvp",
+      "title": "Define the domain model",
+      "description": "Create the core types and rules for project records.",
+      "status": "in_progress",
+      "priority": 1,
+      "value": "Establishes the stable business concepts used by the rest of the application.",
+      "acceptanceCriteria": [
+        "Core entities and identifiers are defined.",
+        "Invalid state transitions are rejected.",
+        "Domain errors are represented explicitly.",
+        "Unit tests cover the main rules."
+      ],
+      "steps": [
+        {
+          "id": "step-domain-types",
+          "title": "Create domain types",
+          "status": "in_progress",
+          "estimate": "small",
+          "dependsOn": []
+        },
+        {
+          "id": "step-domain-tests",
+          "title": "Add domain rule tests",
+          "status": "pending",
+          "estimate": "small",
+          "dependsOn": [
+            "step-domain-types"
+          ]
+        }
+      ],
+      "subGoals": [],
+      "risks": [
+        {
+          "description": "The model may become coupled to persistence concerns.",
+          "mitigation": "Keep persistence representations in infrastructure."
+        }
+      ]
+    }
+  ],
+  "backlog": [
+    {
+      "id": "backlog-web-ui",
+      "title": "Add a web interface",
+      "description": "Explore a browser-based interface after the CLI MVP.",
+      "status": "deferred",
+      "priority": 3,
+      "reason": "Not required for the current milestone."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "decision-workspace-layout",
+      "title": "Use a Cargo workspace",
+      "decision": "Separate application, domain, and infrastructure concerns into workspace crates.",
+      "rationale": "This supports testability and keeps dependencies directional.",
+      "date": "2026-08-22",
+      "status": "accepted"
+    }
+  ]
+}
