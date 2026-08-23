@@ -1,0 +1,79 @@
+{
+  "$schema": "./development-state.schema.json",
+  "projectId": "my-rust-app",
+  "updatedAt": "2026-08-22T14:30:00Z",
+  "currentMilestoneId": "mvp",
+  "currentGoalId": "goal-domain-model",
+  "status": "in_progress",
+  "focus": "Implement the core project identifier and validation rules.",
+  "workingBranch": "feat/domain-model",
+  "lastCommit": {
+    "hash": "abc1234",
+    "message": "chore: initialize Rust workspace",
+    "timestamp": "2026-08-22T14:00:00Z"
+  },
+  "completedSinceLastReview": [],
+  "inProgress": [
+    {
+      "stepId": "step-domain-types",
+      "startedAt": "2026-08-22T14:10:00Z",
+      "notes": [
+        "Use strongly typed identifiers.",
+        "Keep serialization out of the core crate for now."
+      ],
+      "filesChanged": [
+        "crates/core/src/lib.rs"
+      ]
+    }
+  ],
+  "nextActions": [
+    "Define the ProjectId type.",
+    "Add validation for empty project names.",
+    "Write unit tests for valid and invalid names.",
+    "Run cargo fmt, cargo test, and cargo clippy."
+  ],
+  "discoveredWork": [
+    {
+      "id": "discovered-error-display",
+      "title": "Improve user-facing error formatting",
+      "description": "Current errors are technically correct but not yet pleasant for CLI users.",
+      "source": "While implementing domain validation.",
+      "classification": "defer",
+      "linkedGoalId": "goal-domain-model",
+      "priority": 3,
+      "status": "backlog",
+      "reason": "Not required to complete the current acceptance criteria."
+    }
+  ],
+  "blockers": [],
+  "decisionsNeeded": [],
+  "verification": {
+    "format": {
+      "status": "not_run",
+      "command": "cargo fmt --all -- --check"
+    },
+    "check": {
+      "status": "not_run",
+      "command": "cargo check --workspace"
+    },
+    "tests": {
+      "status": "not_run",
+      "command": "cargo test --workspace"
+    },
+    "clippy": {
+      "status": "not_run",
+      "command": "cargo clippy --workspace --all-targets --all-features -- -D warnings"
+    }
+  },
+  "recentCommits": [
+    {
+      "hash": "abc1234",
+      "message": "chore: initialize Rust workspace",
+      "timestamp": "2026-08-22T14:00:00Z"
+    }
+  ],
+  "sessionNotes": [
+    "The domain model is intentionally independent of persistence.",
+    "No new dependencies were added during this session."
+  ]
+}
