@@ -1,0 +1,753 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/application-structure.schema.json",
+  "title": "Rust Application Structure",
+  "description": "Machine-readable representation of the modules, types, fields, methods, functions, constants, traits, and relationships in a Rust application.",
+  "type": "object",
+  "required": [
+    "$schema",
+    "projectId",
+    "updatedAt",
+    "language",
+    "workspace",
+    "naming",
+    "modules",
+    "relationships"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "projectId": {
+      "$ref": "#/$defs/id"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "language": {
+      "$ref": "#/$defs/language"
+    },
+    "workspace": {
+      "$ref": "#/$defs/workspace"
+    },
+    "naming": {
+      "$ref": "#/$defs/naming"
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/module"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relationship"
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "rustIdentifier": {
+      "type": "string",
+      "pattern": "^(?:r#)?[A-Za-z_][A-Za-z0-9_]*$"
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "visibility": {
+      "enum": [
+        "private",
+        "pub",
+        "pub_crate",
+        "pub_super",
+        "pub_in"
+      ]
+    },
+    "language": {
+      "type": "object",
+      "required": [
+        "name",
+        "edition",
+        "minimumRustVersion"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "const": "Rust"
+        },
+        "edition": {
+          "enum": [
+            "2018",
+            "2021",
+            "2024"
+          ]
+        },
+        "minimumRustVersion": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+(?:\\.\\d+)?$"
+        },
+        "toolchainFile": {
+          "type": "string"
+        }
+      }
+    },
+    "workspace": {
+      "type": "object",
+      "required": [
+        "root",
+        "members"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "root": {
+          "$ref": "#/$defs/path"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/workspaceMember"
+          }
+        }
+      }
+    },
+    "workspaceMember": {
+      "type": "object",
+      "required": [
+        "crate",
+        "path",
+        "kind"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "crate": {
+          "$ref": "#/$defs/rustIdentifier"
+        },
+        "path": {
+          "$ref": "#/$defs/path"
+        },
+        "kind": {
+          "enum": [
+            "binary",
+            "library",
+            "proc_macro",
+            "integration_test",
+            "build_script"
+          ]
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "dependsOn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rustIdentifier"
+          }
+        }
+      }
+    },
+    "naming": {
+      "type": "object",
+      "required": [
+        "rules",
+        "identifierPatterns"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/namingRule"
+          }
+        },
+        "identifierPatterns": {
+          "type": "object",
+          "required": [
+            "module",
+            "struct",
+            "enum",
+            "trait",
+            "function",
+            "method",
+            "field",
+            "constant",
+            "static",
+            "typeAlias",
+            "enumVariant",
+            "genericParameter"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "module": {
+              "const": "snake_case"
+            },
+            "struct": {
+              "const": "PascalCase"
+            },
+            "enum": {
+              "const": "PascalCase"
+            },
+            "trait": {
+              "const": "PascalCase"
+            },
+            "function": {
+              "const": "snake_case"
+            },
+            "method": {
+              "const": "snake_case"
+            },
+            "field": {
+              "const": "snake_case"
+            },
+            "constant": {
+              "const": "SCREAMING_SNAKE_CASE"
+            },
+            "static": {
+              "const": "SCREAMING_SNAKE_CASE"
+            },
+            "typeAlias": {
+              "const": "PascalCase"
+            },
+            "enumVariant": {
+              "const": "PascalCase"
+            },
+            "genericParameter": {
+              "const": "PascalCase"
+            }
+          }
+        }
+      }
+    },
+    "namingRule": {
+      "type": "object",
+      "required": [
+        "element",
+        "style",
+        "description"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "element": {
+          "enum": [
+            "module",
+            "struct",
+            "enum",
+            "trait",
+            "function",
+            "method",
+            "field",
+            "constant",
+            "static",
+            "type_alias",
+            "enum_variant",
+            "generic_parameter",
+            "error_type",
+            "test"
+          ]
+        },
+        "style": {
+          "enum": [
+            "snake_case",
+            "PascalCase",
+            "SCREAMING_SNAKE_CASE",
+            "single_uppercase_letter",
+            "domain_specific",
+            "documented_exception"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "examples": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rustIdentifier"
+          }
+        },
+        "exceptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "module": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "path",
+        "visibility",
+        "summary",
+        "symbols",
+        "childModules"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/rustIdentifier"
+        },
+        "qualifiedPath": {
+          "$ref": "#/$defs/path"
+        },
+        "crate": {
+          "$ref": "#/$defs/rustIdentifier"
+        },
+        "path": {
+          "$ref": "#/$defs/path"
+        },
+        "visibility": {
+          "$ref": "#/$defs/visibility"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "responsibilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "symbols": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/symbol"
+          }
+        },
+        "childModules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/module"
+          }
+        },
+        "imports": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "invariants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "symbol": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "visibility",
+        "summary",
+        "source",
+        "members"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/rustIdentifier"
+        },
+        "qualifiedPath": {
+          "$ref": "#/$defs/path"
+        },
+        "kind": {
+          "enum": [
+            "struct",
+            "enum",
+            "trait",
+            "impl",
+            "function",
+            "method",
+            "field",
+            "variant",
+            "constant",
+            "static",
+            "type_alias",
+            "error_type",
+            "macro",
+            "test",
+            "module_reference"
+          ]
+        },
+        "visibility": {
+          "$ref": "#/$defs/visibility"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/member"
+          }
+        },
+        "signature": {
+          "type": "string"
+        },
+        "genericParameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/genericParameter"
+          }
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "derives": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "implements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "extends": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "targetType": {
+          "type": "string"
+        },
+        "receiver": {
+          "enum": [
+            "none",
+            "&self",
+            "&mut_self",
+            "self",
+            "self_box",
+            "self_rc",
+            "self_arc"
+          ]
+        },
+        "returnType": {
+          "type": "string"
+        },
+        "errorType": {
+          "type": "string"
+        },
+        "async": {
+          "type": "boolean"
+        },
+        "unsafe": {
+          "type": "boolean"
+        },
+        "test": {
+          "$ref": "#/$defs/testMetadata"
+        },
+        "stability": {
+          "enum": [
+            "experimental",
+            "stable",
+            "deprecated",
+            "internal"
+          ]
+        },
+        "deprecationReason": {
+          "type": "string"
+        },
+        "invariants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sideEffects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "namingNotes": {
+          "type": "string"
+        }
+      }
+    },
+    "member": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "visibility",
+        "summary"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/rustIdentifier"
+        },
+        "kind": {
+          "enum": [
+            "field",
+            "variant",
+            "method",
+            "function",
+            "constant",
+            "static",
+            "type_alias",
+            "associated_type",
+            "associated_constant",
+            "local_variable",
+            "parameter"
+          ]
+        },
+        "visibility": {
+          "$ref": "#/$defs/visibility"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "signature": {
+          "type": "string"
+        },
+        "default": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "mutable": {
+          "type": "boolean"
+        },
+        "receiver": {
+          "enum": [
+            "none",
+            "&self",
+            "&mut_self",
+            "self",
+            "self_box",
+            "self_rc",
+            "self_arc"
+          ]
+        },
+        "returnType": {
+          "type": "string"
+        },
+        "errorType": {
+          "type": "string"
+        },
+        "async": {
+          "type": "boolean"
+        },
+        "unsafe": {
+          "type": "boolean"
+        },
+        "genericParameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/genericParameter"
+          }
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/parameter"
+          }
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "invariants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sideEffects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "namingNotes": {
+          "type": "string"
+        }
+      }
+    },
+    "parameter": {
+      "type": "object",
+      "required": [
+        "name",
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/rustIdentifier"
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "genericParameter": {
+      "type": "object",
+      "required": [
+        "name",
+        "kind"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/rustIdentifier"
+        },
+        "kind": {
+          "enum": [
+            "type",
+            "lifetime",
+            "const"
+          ]
+        },
+        "bounds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "type": "string"
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "file"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "$ref": "#/$defs/path"
+        },
+        "lineStart": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "lineEnd": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "testMetadata": {
+      "type": "object",
+      "required": [
+        "testKind",
+        "coverage"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "testKind": {
+          "enum": [
+            "unit",
+            "integration",
+            "doctest",
+            "property",
+            "benchmark"
+          ]
+        },
+        "coverage": {
+          "type": "string"
+        },
+        "command": {
+          "type": "string"
+        }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "required": [
+        "from",
+        "type",
+        "to",
+        "description"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "enum": [
+            "contains",
+            "uses",
+            "calls",
+            "implements",
+            "depends_on",
+            "returns",
+            "accepts",
+            "constructs",
+            "converts_to",
+            "publishes",
+            "persists",
+            "reads_from",
+            "writes_to",
+            "tested_by"
+          ]
+        },
+        "to": {
+          "$ref": "#/$defs/id"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "direction": {
+          "enum": [
+            "one_way",
+            "two_way"
+          ]
+        }
+      }
+    }
+  }
+}
