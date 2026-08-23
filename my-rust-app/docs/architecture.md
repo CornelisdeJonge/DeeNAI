@@ -1,1 +1,1 @@
-Something about the architecture here.
+Define project architecture here. #TODO
