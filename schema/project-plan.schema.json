@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.com/schemas/project-plan.schema.json",
+  "$id": "https://raw.githubusercontent.com/CornelisdeJonge/DeeNAI/main/schema/project-plan.schema.json",
   "title": "Software Project Plan",
   "type": "object",
   "required": [
