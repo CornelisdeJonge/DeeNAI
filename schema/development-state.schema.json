@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.com/schemas/development-state.schema.json",
+  "$id": "https://raw.githubusercontent.com/CornelisdeJonge/DeeNAI/main/schema/development-state.schema.json",
   "title": "Software Development State",
   "type": "object",
   "required": [
