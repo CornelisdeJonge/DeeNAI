@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.com/schemas/application-structure.schema.json",
+  "$id": "https://raw.githubusercontent.com/CornelisdeJonge/DeeNAI/main/schema/application-structure.schema.json",
   "title": "Software Application Structure",
   "description": "Machine-readable representation of the components, modules, symbols, APIs, and relationships in a software application.",
   "type": "object",
