@@ -1,20 +1,20 @@
 {
-  "$schema": "./application-structure.schema.json",
+  "$schema": "../../schema/application-structure.schema.json",
   "projectId": "my-rust-app",
   "updatedAt": "2026-08-22T15:00:00Z",
   "language": {
     "name": "Rust",
     "edition": "2024",
-    "minimumRustVersion": "1.85.0",
+    "version": "1.85.0",
     "toolchainFile": "rust-toolchain.toml"
   },
   "workspace": {
     "root": ".",
     "members": [
       {
-        "crate": "app",
+        "name": "app",
         "path": "crates/app",
-        "kind": "binary",
+        "kind": "application",
         "purpose": "Application entry point and orchestration.",
         "dependsOn": [
           "core",
@@ -22,14 +22,14 @@
         ]
       },
       {
-        "crate": "core",
+        "name": "core",
         "path": "crates/core",
         "kind": "library",
         "purpose": "Domain types and business rules.",
         "dependsOn": []
       },
       {
-        "crate": "infrastructure",
+        "name": "infrastructure",
         "path": "crates/infrastructure",
         "kind": "library",
         "purpose": "External systems and persistence.",
@@ -116,9 +116,9 @@
       "id": "module-core",
       "name": "core",
       "qualifiedPath": "core",
-      "crate": "core",
+      "component": "core",
       "path": "crates/core/src/lib.rs",
-      "visibility": "pub",
+      "visibility": "public",
       "summary": "Contains the application's domain model and business rules.",
       "responsibilities": [
         "Define domain entities.",
@@ -140,7 +140,7 @@
           "name": "ProjectId",
           "qualifiedPath": "core::ProjectId",
           "kind": "struct",
-          "visibility": "pub",
+          "visibility": "public",
           "summary": "Strongly typed identifier for a project.",
           "description": "Prevents accidental use of arbitrary strings where a project identifier is required.",
           "source": {
@@ -169,7 +169,7 @@
               "id": "method-project-id-new",
               "name": "new",
               "kind": "method",
-              "visibility": "pub",
+              "visibility": "public",
               "summary": "Creates a ProjectId from a non-empty identifier string.",
               "signature": "pub fn new(value: impl Into<String>) -> Result<Self, DomainError>",
               "receiver": "none",
@@ -196,12 +196,6 @@
               "sideEffects": []
             }
           ],
-          "derives": [
-            "Debug",
-            "Clone",
-            "PartialEq",
-            "Eq"
-          ],
           "invariants": [
             "A ProjectId always contains a non-empty value."
           ],
@@ -212,7 +206,7 @@
           "name": "Project",
           "qualifiedPath": "core::Project",
           "kind": "struct",
-          "visibility": "pub",
+          "visibility": "public",
           "summary": "Represents a project managed by the application.",
           "source": {
             "file": "crates/core/src/lib.rs",
@@ -224,7 +218,7 @@
               "id": "field-project-id",
               "name": "id",
               "kind": "field",
-              "visibility": "pub",
+              "visibility": "public",
               "summary": "Unique identifier of the project.",
               "type": "ProjectId",
               "required": true,
@@ -239,7 +233,7 @@
               "id": "field-project-name",
               "name": "name",
               "kind": "field",
-              "visibility": "pub",
+              "visibility": "public",
               "summary": "Human-readable project name.",
               "type": "String",
               "required": true,
@@ -254,7 +248,7 @@
               "id": "method-project-validate",
               "name": "validate",
               "kind": "method",
-              "visibility": "pub",
+              "visibility": "public",
               "summary": "Checks whether the project satisfies domain validation rules.",
               "signature": "pub fn validate(&self) -> Result<(), DomainError>",
               "receiver": "&self",
@@ -273,12 +267,6 @@
               ]
             }
           ],
-          "derives": [
-            "Debug",
-            "Clone",
-            "PartialEq",
-            "Eq"
-          ],
           "invariants": [
             "The id is valid.",
             "The name is not blank."
@@ -290,7 +278,7 @@
           "name": "DomainError",
           "qualifiedPath": "core::DomainError",
           "kind": "error_type",
-          "visibility": "pub",
+          "visibility": "public",
           "summary": "Errors produced when domain rules are violated.",
           "source": {
             "file": "crates/core/src/lib.rs",
@@ -302,7 +290,7 @@
               "id": "variant-empty-project-name",
               "name": "EmptyProjectName",
               "kind": "variant",
-              "visibility": "pub",
+              "visibility": "public",
               "summary": "The project name is empty or contains only whitespace.",
               "type": "unit",
               "source": {
@@ -311,11 +299,6 @@
                 "lineEnd": 73
               }
             }
-          ],
-          "derives": [
-            "Debug",
-            "Display",
-            "Error"
           ],
           "stability": "stable"
         }

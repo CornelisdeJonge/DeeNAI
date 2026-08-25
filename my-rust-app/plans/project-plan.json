@@ -1,5 +1,5 @@
 {
-  "$schema": "./project-plan.schema.json",
+  "$schema": "../../schema/project-plan.schema.json",
   "project": {
     "id": "my-rust-app",
     "name": "My Rust Application",
@@ -27,7 +27,7 @@
     "No feature is considered complete without acceptance tests or an explicit justification."
   ],
   "architecture": {
-    "workspaceMembers": [
+    "components": [
       "crates/app",
       "crates/core",
       "crates/infrastructure"

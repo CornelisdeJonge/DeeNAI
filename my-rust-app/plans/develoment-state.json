@@ -1,5 +1,5 @@
 {
-  "$schema": "./development-state.schema.json",
+  "$schema": "../../schema/development-state.schema.json",
   "projectId": "my-rust-app",
   "updatedAt": "2026-08-22T14:30:00Z",
   "currentMilestoneId": "mvp",
@@ -48,23 +48,29 @@
   "blockers": [],
   "decisionsNeeded": [],
   "verification": {
-    "format": {
+  "checks": [
+    {
+      "name": "format",
       "status": "not_run",
       "command": "cargo fmt --all -- --check"
     },
-    "check": {
+    {
+      "name": "check",
       "status": "not_run",
       "command": "cargo check --workspace"
     },
-    "tests": {
+    {
+      "name": "tests",
       "status": "not_run",
       "command": "cargo test --workspace"
     },
-    "clippy": {
+    {
+      "name": "clippy",
       "status": "not_run",
       "command": "cargo clippy --workspace --all-targets --all-features -- -D warnings"
     }
-  },
+  ]
+},
   "recentCommits": [
     {
       "hash": "abc1234",

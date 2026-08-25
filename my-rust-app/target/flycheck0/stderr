@@ -1,0 +1,414 @@
+    Updating crates.io index
+     Locking 16 packages to latest Rust 1.85 compatible versions
+   0.234006700s  INFO prepare_target{force=false package_id=app v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\app) target="app"}: cargo::core::compiler::fingerprint: fingerprint error for app v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\app)/Check { test: false }/TargetInner { name: "app", doc: true, ..: with_path("D:\\Projects\\DeeNAI\\DeeNAI\\my-rust-app\\crates\\app\\src\\main.rs", Edition2024) }
+   0.234050900s  INFO prepare_target{force=false package_id=app v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\app) target="app"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\app-7964ff02fe2fa64a\bin-app`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_libgit2_prerelease
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: git_midx_writer_dump
+  16: git_filter_source_repo
+  17: git_midx_writer_dump
+  18: BaseThreadInitThunk
+  19: RtlUserThreadStart
+   0.244942400s  INFO prepare_target{force=false package_id=anyhow v1.0.104 target="anyhow"}: cargo::core::compiler::fingerprint: fingerprint error for anyhow v1.0.104/Check { test: false }/TargetInner { ..: lib_target("anyhow", ["lib"], "D:\\Rust\\cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\anyhow-1.0.104\\src\\lib.rs", Edition2021) }
+   0.244976000s  INFO prepare_target{force=false package_id=anyhow v1.0.104 target="anyhow"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\anyhow-79bca8735a05144a\lib-anyhow`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   0.246580500s  INFO prepare_target{force=false package_id=core v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\core) target="core"}: cargo::core::compiler::fingerprint: fingerprint error for core v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\core)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("core", ["lib"], "D:\\Projects\\DeeNAI\\DeeNAI\\my-rust-app\\crates\\core\\src\\lib.rs", Edition2024) }
+   0.246597200s  INFO prepare_target{force=false package_id=core v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\core) target="core"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\core-0ca85d95687b3392\lib-core`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   0.247081200s  INFO prepare_target{force=false package_id=serde v1.0.229 target="serde"}: cargo::core::compiler::fingerprint: fingerprint error for serde v1.0.229/Check { test: false }/TargetInner { ..: lib_target("serde", ["lib"], "D:\\Rust\\cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde-1.0.229\\src\\lib.rs", Edition2021) }
+   0.247095900s  INFO prepare_target{force=false package_id=serde v1.0.229 target="serde"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\serde-44b630ba592aba53\lib-serde`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_libgit2_prerelease
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.248479800s  INFO prepare_target{force=false package_id=serde_core v1.0.229 target="serde_core"}: cargo::core::compiler::fingerprint: fingerprint error for serde_core v1.0.229/Check { test: false }/TargetInner { ..: lib_target("serde_core", ["lib"], "D:\\Rust\\cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_core-1.0.229\\src\\lib.rs", Edition2021) }
+   0.248495200s  INFO prepare_target{force=false package_id=serde_core v1.0.229 target="serde_core"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\serde_core-55aec6eedc5f0b4c\lib-serde_core`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_libgit2_prerelease
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.252674000s  INFO prepare_target{force=false package_id=thiserror v2.0.20 target="thiserror"}: cargo::core::compiler::fingerprint: fingerprint error for thiserror v2.0.20/Check { test: false }/TargetInner { ..: lib_target("thiserror", ["lib"], "D:\\Rust\\cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\thiserror-2.0.20\\src\\lib.rs", Edition2021) }
+   0.252689900s  INFO prepare_target{force=false package_id=thiserror v2.0.20 target="thiserror"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\thiserror-cab64b92ebbea6d7\lib-thiserror`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_libgit2_prerelease
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.254288000s  INFO prepare_target{force=false package_id=infrastructure v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\infrastructure) target="infrastructure"}: cargo::core::compiler::fingerprint: fingerprint error for infrastructure v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\infrastructure)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("infrastructure", ["lib"], "D:\\Projects\\DeeNAI\\DeeNAI\\my-rust-app\\crates\\infrastructure\\src\\lib.rs", Edition2024) }
+   0.254304900s  INFO prepare_target{force=false package_id=infrastructure v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\infrastructure) target="infrastructure"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\infrastructure-1afa81bab927c7a1\lib-infrastructure`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   0.254805000s  INFO prepare_target{force=false package_id=tracing v0.1.44 target="tracing"}: cargo::core::compiler::fingerprint: fingerprint error for tracing v0.1.44/Check { test: false }/TargetInner { ..: lib_target("tracing", ["lib"], "D:\\Rust\\cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\tracing-0.1.44\\src\\lib.rs", Edition2018) }
+   0.254819700s  INFO prepare_target{force=false package_id=tracing v0.1.44 target="tracing"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\tracing-bd625c32d41c7e51\lib-tracing`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_libgit2_prerelease
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.255350400s  INFO prepare_target{force=false package_id=pin-project-lite v0.2.17 target="pin_project_lite"}: cargo::core::compiler::fingerprint: fingerprint error for pin-project-lite v0.2.17/Check { test: false }/TargetInner { doc_scrape_examples: Disabled, ..: lib_target("pin_project_lite", ["lib"], "D:\\Rust\\cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\pin-project-lite-0.2.17\\src\\lib.rs", Edition2018) }
+   0.255366100s  INFO prepare_target{force=false package_id=pin-project-lite v0.2.17 target="pin_project_lite"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\pin-project-lite-8446767a78dbc9ed\lib-pin_project_lite`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_libgit2_prerelease
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.256491000s  INFO prepare_target{force=false package_id=tracing-core v0.1.36 target="tracing_core"}: cargo::core::compiler::fingerprint: fingerprint error for tracing-core v0.1.36/Check { test: false }/TargetInner { ..: lib_target("tracing_core", ["lib"], "D:\\Rust\\cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\tracing-core-0.1.36\\src\\lib.rs", Edition2018) }
+   0.256506300s  INFO prepare_target{force=false package_id=tracing-core v0.1.36 target="tracing_core"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\tracing-core-04471a24228fa7c8\lib-tracing_core`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_libgit2_prerelease
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.256970400s  INFO prepare_target{force=false package_id=once_cell v1.21.4 target="once_cell"}: cargo::core::compiler::fingerprint: fingerprint error for once_cell v1.21.4/Check { test: false }/TargetInner { ..: lib_target("once_cell", ["lib"], "D:\\Rust\\cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\once_cell-1.21.4\\src\\lib.rs", Edition2021) }
+   0.256993400s  INFO prepare_target{force=false package_id=once_cell v1.21.4 target="once_cell"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\once_cell-032b11af86828312\lib-once_cell`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.257660300s  INFO prepare_target{force=false package_id=app v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\app) target="app"}: cargo::core::compiler::fingerprint: fingerprint error for app v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\app)/Check { test: true }/TargetInner { name: "app", doc: true, ..: with_path("D:\\Projects\\DeeNAI\\DeeNAI\\my-rust-app\\crates\\app\\src\\main.rs", Edition2024) }
+   0.257678700s  INFO prepare_target{force=false package_id=app v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\app) target="app"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\app-734b0222f42a73c2\test-bin-app`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_libgit2_prerelease
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: git_midx_writer_dump
+  16: git_filter_source_repo
+  17: git_midx_writer_dump
+  18: BaseThreadInitThunk
+  19: RtlUserThreadStart
+   0.258230800s  INFO prepare_target{force=false package_id=core v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\core) target="core"}: cargo::core::compiler::fingerprint: fingerprint error for core v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\core)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("core", ["lib"], "D:\\Projects\\DeeNAI\\DeeNAI\\my-rust-app\\crates\\core\\src\\lib.rs", Edition2024) }
+   0.258246700s  INFO prepare_target{force=false package_id=core v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\core) target="core"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\core-f8e3a8986cc3d679\test-lib-core`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_libgit2_prerelease
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: git_midx_writer_dump
+  16: git_filter_source_repo
+  17: git_midx_writer_dump
+  18: BaseThreadInitThunk
+  19: RtlUserThreadStart
+   0.258749800s  INFO prepare_target{force=false package_id=infrastructure v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\infrastructure) target="infrastructure"}: cargo::core::compiler::fingerprint: fingerprint error for infrastructure v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\infrastructure)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("infrastructure", ["lib"], "D:\\Projects\\DeeNAI\\DeeNAI\\my-rust-app\\crates\\infrastructure\\src\\lib.rs", Edition2024) }
+   0.258766500s  INFO prepare_target{force=false package_id=infrastructure v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\infrastructure) target="infrastructure"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\.fingerprint\infrastructure-cddb23525e599b4d\test-lib-infrastructure`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_libgit2_prerelease
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: git_midx_writer_dump
+  16: git_filter_source_repo
+  17: git_midx_writer_dump
+  18: BaseThreadInitThunk
+  19: RtlUserThreadStart
+    Checking once_cell v1.21.4
+    Checking pin-project-lite v0.2.17
+    Checking serde_core v1.0.229
+    Checking anyhow v1.0.104
+    Checking thiserror v2.0.20
+    Checking tracing-core v0.1.36
+    Checking tracing v0.1.44
+    Checking infrastructure v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\infrastructure)
+    Checking serde v1.0.229
+    Checking core v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\core)
+    Checking app v0.1.0 (D:\Projects\DeeNAI\DeeNAI\my-rust-app\crates\app)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.15s

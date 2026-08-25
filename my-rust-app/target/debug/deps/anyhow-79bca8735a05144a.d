@@ -1,0 +1,15 @@
+D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\deps\anyhow-79bca8735a05144a.d: D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\lib.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\backtrace.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\chain.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\context.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\ensure.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\error.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\fmt.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\kind.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\macros.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\ptr.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\wrapper.rs
+
+D:\Projects\DeeNAI\DeeNAI\my-rust-app\target\debug\deps\libanyhow-79bca8735a05144a.rmeta: D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\lib.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\backtrace.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\chain.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\context.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\ensure.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\error.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\fmt.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\kind.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\macros.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\ptr.rs D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\wrapper.rs
+
+D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\lib.rs:
+D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\backtrace.rs:
+D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\chain.rs:
+D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\context.rs:
+D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\ensure.rs:
+D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\error.rs:
+D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\fmt.rs:
+D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\kind.rs:
+D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\macros.rs:
+D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\ptr.rs:
+D:\Rust\cargo\registry\src\index.crates.io-1949cf8c6b5b557f\anyhow-1.0.104\src\wrapper.rs:
